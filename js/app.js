@@ -12,5 +12,14 @@ console.log(fullPrice)
 console.dir(full_price)
 full_price.innerHTML = fullPrice
 // va applicato uno sconto del 20% per i minorenni
+if (age < 18 ) {
+    let discount = fullPrice * 0.2
+    let discountedPrice = totalKm * 0.21 - discount
+    console.log(discountedPrice)
+    
+    full_price.innerHTML = discountedPrice
+} else {
+    
+}
 // va applicato uno sconto del 40% per gli over 65.
 // L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo : es 15.23 €).
