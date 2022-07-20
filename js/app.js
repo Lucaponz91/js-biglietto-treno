@@ -13,23 +13,24 @@ console.log(finalPrice)
 console.dir(final_price)
 let userPrice = document.getElementById('final_price')
 // va applicato uno sconto del 20% per i minorenni
-
-if (age < 18 ) {
-    let discount = finalPrice * 0.2
-    let discountedPrice = totalKm * 0.21 - discount
-    discountedPrice = discountedPrice.toFixed(2)
-    console.log(discountedPrice)   
-    userPrice.innerHTML = discountedPrice
-// va applicato uno sconto del 40% per gli over 65.
-} else if (age > 65){ 
-    let discount = finalPrice * 0.4
-    let discountedPrice = totalKm * 0.21 - discount
-    discountedPrice = discountedPrice.toFixed(2)
-    console.log(discountedPrice)
-    userPrice.innerHTML = discountedPrice
-} else{
-userPrice.innerHTML = finalPrice
-}
+if (!isNaN(age) && !isNaN(totalKm)) {
+    if (age < 18) {
+        let discount = finalPrice * 0.2
+        let discountedPrice = totalKm * 0.21 - discount
+        discountedPrice = discountedPrice.toFixed(2)
+        console.log(discountedPrice)
+        userPrice.innerHTML = discountedPrice
+        // va applicato uno sconto del 40% per gli over 65.
+    } else if (age > 65) {
+        let discount = finalPrice * 0.4
+        let discountedPrice = totalKm * 0.21 - discount
+        discountedPrice = discountedPrice.toFixed(2)
+        console.log(discountedPrice)
+        userPrice.innerHTML = discountedPrice
+    } else
+        userPrice.innerHTML = finalPrice
+} else
+    alert('Devi inserire un numero!')
 
 
 // L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo : es 15.23 €).
