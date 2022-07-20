@@ -17,12 +17,15 @@ if (age < 18 ) {
     let discount = fullPrice * 0.2
     let discountedPrice = totalKm * 0.21 - discount
     discountedPrice = discountedPrice.toFixed(2)
-    console.log(discountedPrice)
-    
+    console.log(discountedPrice)   
     full_price.innerHTML = discountedPrice
-} else {
-
-    
+} else if (age > 65){ 
+    let discount = fullPrice * 0.4
+    let discountedPrice = totalKm * 0.21 - discount
+    discountedPrice = discountedPrice.toFixed(2)
+    console.log(discountedPrice)
+    full_price.innerHTML = discountedPrice
 }
+
 // va applicato uno sconto del 40% per gli over 65.
 // L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo : es 15.23 €).
